@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Apple II';
+    src: url('../fonts/font.ttf');
+}
+
+html,
+body {
+    color: #12ff1e;
+    font-size: 1em;
+    font-family: 'Apple II';
+    line-height: 2vh;
+    background-image: radial-gradient(#030e00, black 120%);
+    text-shadow: 0 0 5px rgba(0, 255, 47, 0.471);
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(rgba(4, 60, 0, 0.03) 0.5vh, rgba(0, 0, 0, 0.05) 0.8vh);
+    z-index: -1;
+}
+
+
+header {
+    font-size: 2em;
+}
+
+.grid {
+    width: 98%;
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template:
+        [row1-start] "pname rname pxp" auto [row1-end] [row2-start] "npc rimg pimg" auto [row2-end] [row3-start] "output output stats" auto [row3-end] [row4-start] "input input stats" auto [row4-end] [row5-start] "thing thing thing" auto [row5-end] / auto auto auto;
+}
+
+.pname {
+    text-align: center;
+    grid-area: pname;
+}
+
+.rname {
+    text-align: center;
+    grid-area: rname;
+}
+
+.pxp {
+    text-align: center;
+    grid-area: pxp;
+}
+
+.npc {
+    text-align: center;
+    grid-area: npc;
+}
+
+.rimg {
+    text-align: center;
+    grid-area: rimg;
+}
+
+.pimg {
+    text-align: center;
+    grid-area: pimg;
+}
+
+.output {
+    grid-area: output;
+}
+
+.stats {
+    grid-area: stats;
+}
+
+.input {
+    grid-area: input;
+}
+
+#input {
+    height: 4vh;
+    width: 98.5vh;
+    color: #12ff1e;
+    background: transparent;
+    font-size: 2vh;
+    font-family: "Apple II";
+    border: none;
+    position: relative;
+    bottom: 0.175vh;
+    margin-left: .5vw;
+}
+
+@keyframes blink {
+    0% {
+        background: rgb(54, 255, 47);
+    }
+
+    49% {
+        background: rgb(54, 255, 47);
+    }
+
+    60% {
+        background: transparent;
+    }
+
+    99% {
+        background: transparent;
+    }
+
+    100% {
+        background: rgb(54, 255, 47);
+    }
+}
