@@ -30,10 +30,9 @@ header {
 }
 
 .grid {
-    width: 98%;
     height: 100%;
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: .75rem;
     grid-template:
         [row1-start] "rname npcname pxp" auto [row1-end]
         [row2-start] "rimg npc stats" auto [row2-end]
