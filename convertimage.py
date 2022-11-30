@@ -8,8 +8,8 @@ img = Image.open(image_path)
 # resize the image
 width, height = img.size
 aspect_ratio = height/width
-new_width = 30
-new_height = aspect_ratio * new_width * 0.75
+new_width = 45
+new_height = aspect_ratio * new_width
 img = img.resize((new_width, int(new_height)))
 # new size of image
 # print(img.size)
@@ -21,7 +21,7 @@ pixels = img.getdata()
 
 # replace each pixel with a character from array
 #chars = ["B","S","#","&","@","$","%","*","!",":","."]
-chars = ["Ñ","@","#","W","$","?","!",";",":","+","=","-",",",".","_"," "," "," "," "]
+chars = [".",",","-","=","+",":",";","!","?","$","W","#","@","Ñ"]
 new_pixels = [chars[pixel//25] for pixel in pixels]
 new_pixels = ''.join(new_pixels)
 

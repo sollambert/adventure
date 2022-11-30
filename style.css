@@ -8,7 +8,6 @@ body {
     color: #12ff1e;
     font-size: 1em;
     font-family: 'Apple II';
-    line-height: 2vh;
     background-image: radial-gradient(#030e00, black 120%);
     text-shadow: 0 0 5px rgba(0, 255, 47, 0.471);
 }
@@ -26,70 +25,89 @@ body::after {
 
 
 header {
+    padding: 1em;
     font-size: 2em;
 }
 
 .grid {
     width: 98%;
+    height: 100%;
     display: grid;
-    grid-gap: 0.5rem;
+    grid-gap: 1rem;
     grid-template:
-        [row1-start] "pname rname pxp" auto [row1-end] [row2-start] "npc rimg pimg" auto [row2-end] [row3-start] "output output stats" auto [row3-end] [row4-start] "input input stats" auto [row4-end] [row5-start] "thing thing thing" auto [row5-end] / auto auto auto;
+        [row1-start] "rname npcname pxp" auto [row1-end]
+        [row2-start] "rimg npc stats" auto [row2-end]
+        [row3-start] "output output thing" auto [row3-end]
+        [row4-start] "input input thing" 2em [row4-end]/ auto auto auto;
 }
 
-.pname {
+#npcname {
+    border: 2px solid #12ff1e !important;
     text-align: center;
-    grid-area: pname;
+    grid-area: npcname;
 }
 
-.rname {
+#rname {
+    border: 2px solid #12ff1e !important;
     text-align: center;
     grid-area: rname;
 }
 
-.pxp {
+#pxp {
+    border: 2px solid #12ff1e !important;
     text-align: center;
     grid-area: pxp;
 }
 
-.npc {
+#npc {
+    border: 2px solid #12ff1e !important;
     text-align: center;
     grid-area: npc;
 }
 
-.rimg {
+#rimg {
+    border: 2px solid #12ff1e !important;
     text-align: center;
     grid-area: rimg;
 }
 
-.pimg {
+#pimg {
     text-align: center;
     grid-area: pimg;
 }
 
-.output {
+#output {
+    border: 2px solid #12ff1e !important;
+    overflow: auto;
     grid-area: output;
+    min-height: 20em;
 }
 
-.stats {
+#stats {
+    border: 2px solid #12ff1e !important;
     grid-area: stats;
 }
 
-.input {
-    grid-area: input;
+
+#thing {
+    border: 2px solid #12ff1e !important;
+    grid-area: thing;
 }
 
 #input {
-    height: 4vh;
-    width: 98.5vh;
+    grid-area: input;
+}
+
+.input {
+    border: 2px solid #12ff1e !important;
     color: #12ff1e;
+    width: 100%;
     background: transparent;
     font-size: 2vh;
     font-family: "Apple II";
-    border: none;
     position: relative;
     bottom: 0.175vh;
-    margin-left: .5vw;
+    height:fit-content;
 }
 
 @keyframes blink {
