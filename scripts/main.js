@@ -1,5 +1,6 @@
 var text;
 
+
 function doGET(path, callback) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -29,4 +30,13 @@ function getFileData(fileData) {
     output.insertAdjacentText('beforeend', text);
 }
 
-doGET("http://127.0.0.1:8000/foo.txt", getFileData);
+async function loadJson() {
+    const {default:jsonContents} = await import("./assets/test.json",{
+        assert:{
+            type:"json"
+        }
+    });
+    console.log(jsonContents);
+}
+
+doGET("./assets/foo.txt", getFileData);
